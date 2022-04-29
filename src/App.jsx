@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 
-import './App.css'
+import './index.css'
 import StudentForm from './components/StudentForm'
 import StudentList from './components/StudentList'
 
@@ -25,10 +25,13 @@ function App() {
     setStudentList((prev) => prev.filter((s) => s.id !== studentId))
   }
   return (
-    <div>
-      <StudentForm onSubmit={addStudent} setStudentData={setStudentData} studentData={studentData} />
-      <StudentList list={studentList} removeStudent={removeStudent} />
-    </div>
+    <>
+      <h1 className='text-blue-900'>Student list</h1>
+      <div className='flex justify-around  '>
+        <StudentForm onSubmit={addStudent} setStudentData={setStudentData} studentData={studentData} />
+        <StudentList list={studentList} removeStudent={removeStudent} />
+      </div>
+    </>
   )
 }
 

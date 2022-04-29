@@ -1,6 +1,6 @@
 const StudentForm = ({ onSubmit, studentData, setStudentData }) => {
   return (
-    <div className='w-full max-w-xs'>
+    <div className='w-full max-w-xs mt-5'>
       <form onSubmit={(e) => onSubmit(e, studentData)} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
         <h2 className='text-xl text-gray-700 font-bold text-center'>Student Form</h2>
         <div className='mb-4'>

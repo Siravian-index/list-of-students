@@ -25,8 +25,7 @@ function App() {
   }
   return (
     <>
-      {/* <div className='flex justify-around mt-5'> */}
-      <div className='flex flex-col md:flex-row justify-around mt-5'>
+      <div className='flex flex-col md:flex-row justify-around  bg-[#4c566a] w-screen h-screen'>
         <StudentForm onSubmit={addStudent} setStudentData={setStudentData} studentData={studentData} />
         <StudentList list={studentList} removeStudent={removeStudent} />
       </div>

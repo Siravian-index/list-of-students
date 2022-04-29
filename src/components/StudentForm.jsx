@@ -1,23 +1,24 @@
-import { useEffect } from 'react'
-
 const StudentForm = ({ onSubmit, studentData, setStudentData }) => {
-  const onChange = () => {}
-
   return (
-    <div>
-      <form onSubmit={(e) => onSubmit(e, studentData)} className='flex flex-col justify-center items-center'>
-        <div>
-          <label htmlFor='firstName'>
+    <div className='w-full max-w-xs'>
+      <form onSubmit={(e) => onSubmit(e, studentData)} className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+        <h2 className='text-xl text-gray-700 font-bold text-center'>Student Form</h2>
+        <div className='mb-4'>
+          <label htmlFor='firstName' className='block text-gray-700 text-sm font-bold mb-2'>
+            First name
             <input
+              className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username'
               type='text'
               onChange={(e) => setStudentData({ ...studentData, firstName: e.currentTarget.value })}
               value={studentData.firstName}
             />
           </label>
         </div>
-        <div>
-          <label htmlFor='lastName'>
+        <div className='mb-6'>
+          <label htmlFor='lastName' className='block text-gray-700 text-sm font-bold mb-2'>
+            Last name
             <input
+              className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
               type='text'
               onChange={(e) => setStudentData({ ...studentData, lastName: e.currentTarget.value })}
               value={studentData.lastName}
@@ -26,7 +27,7 @@ const StudentForm = ({ onSubmit, studentData, setStudentData }) => {
         </div>
         <div>
           <button
-            className='focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
+            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
             type='submit'
           >
             Add

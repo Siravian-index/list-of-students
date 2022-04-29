@@ -6,7 +6,6 @@ import StudentForm from './components/StudentForm'
 import StudentList from './components/StudentList'
 
 function App() {
-  // -----
   const [studentList, setStudentList] = useState([])
   const [studentData, setStudentData] = useState({ firstName: '', lastName: '' })
   useEffect(() => {
@@ -26,8 +25,8 @@ function App() {
   }
   return (
     <>
-      <h1 className='text-blue-900'>Student list</h1>
-      <div className='flex justify-around  '>
+      {/* <div className='flex justify-around mt-5'> */}
+      <div className='flex flex-col md:flex-row justify-around mt-5'>
         <StudentForm onSubmit={addStudent} setStudentData={setStudentData} studentData={studentData} />
         <StudentList list={studentList} removeStudent={removeStudent} />
       </div>

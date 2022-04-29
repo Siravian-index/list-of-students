@@ -1,27 +1,23 @@
 import { useState } from 'react'
-import logo from './logo.svg'
+import { nanoid } from 'nanoid'
+
 import './App.css'
-import ListOfStudents from './components/ListOfStudents'
+import StudentForm from './components/StudentForm'
+import StudentList from './components/StudentList'
 
 function App() {
-
-  const [number, setNumber] = useState(0)
-
-  const addToNumber = ()=>{
-    setNumber(number + 1)
+  const [studentList, setStudentList] = useState([])
+  const [studentData, setStudentData] = useState({ firstName: '', lastName: '' })
+  const addStudent = (newStudent) => {
+    setStudentList((prev) => [...prev, { ...newStudent, id: nanoid() }])
   }
-
-  const substractToNumber = ()=>{
-    setNumber(number - 1)
+  const removeStudent = (studentId) => {
+    setStudentList((prev) => prev.filter((s) => s.id !== studentId))
   }
-
   return (
     <div>
-      <h1>My first application</h1>
-      <h1>{number}</h1>
-      <button onClick={addToNumber}>+</button>
-      <button onClick={substractToNumber}>-</button>
-      <ListOfStudents />
+      <StudentForm onSubmit={addStudent} setStudentData={setStudentData} studentData={studentData} />
+      <StudentList list={studentList} removeStudent={removeStudent} />
     </div>
   )
 }

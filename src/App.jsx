@@ -6,7 +6,7 @@ import StudentForm from './components/StudentForm'
 import StudentList from './components/StudentList'
 
 function App() {
-  const [studentList, setStudentList] = useState([])
+  const [studentList, setStudentList] = useState([{ firstName: 'David', lastName: 'Chavez', id: nanoid() }])
   const [studentData, setStudentData] = useState({ firstName: '', lastName: '' })
   useEffect(() => {
     console.log(studentList)
